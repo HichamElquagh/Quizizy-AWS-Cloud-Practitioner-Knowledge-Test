@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+    
     <title></title>
   </head>
   <body>
@@ -19,32 +20,53 @@
 
     <div class="container">
         <div class="stepper-component">
-            <div class="component-step component-step-active " data-title="Informations"></div>
+            <div class="progress" id="progress"></div>
+            <div class="component-step component-step-active" data-title="Informations"></div>
             <div class="component-step"  data-title="Questionnaire"></div>
-            <div class="component-step" data-title="   Résultat"></div>
-            <div class="component-step"></div>
+            <div class="component-step" data-title="  Résultat"></div>
         </div>
-    <!-- for the informations page  -->
-        <div class="parent-information"> 
+    </div>
+
+    <div class=" container " id="infoo">
+        <div id="parent-information" class="parent-information-active" > 
             <div class="information">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lhhhhhhhhhhhh</p>
+                <p class="fs-2 p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus laborum, doloremque at aliquid itaque facilis ipsum dolor quia, placeat minima fuga molestiae repudiandae non veniam odit! In aperiam necessitatibus veritatis.</p>
             </div>
-            <div class=" info-btn d-flex justify-content-end">
-                <button class="btn-previous">Previous</button>
-                <button class="btn-next">Next</button>
+            <div class=" info-btn d-flex justify-content-center  flex-wrap">
+                <button  id="btn-nex" class="btn-next" >Next</button>
             </div>
         </div>
-        <div class="d-flex flex-column align-content-between">
+    </div>
+
+     
+    <div  class="start container " >
+      <div class="start-card"  onclick="startQuiz();">
+         <h1>Start Quiz</h1>
+      </div>
+    </div>
+    <div class="container">
+        
+    </div>
+
+    <div class="question container" id="question-container"> 
+        <div class="container-bar"> <div class="progress-bar"   data-stagees="10" ></div></div>     
+        <div class=" d-flex flex-column align-content-between ">
             <div class="question-card">
                 <h1>Lorem ipsum, dolor sit amet consectetur adipi</h1>
             </div>
             <div id="card" class="d-flex justify-content-between flex-wrap ">
-                <div class="answer1-card">hhhhhhhh</div>
-                <div class="answer1-card">hhhhhhh</div>
-                <div class="answer1-card">kkkkk</div>
-                <div class="answer1-card">kkkkkkk</div>
+              <!-- <div id="progress" class="progress"></div> -->
+                <div class="answer1-card" onclick="nextQuestion();"></div>
+                <div class="answer1-card" onclick="nextQuestion();"></div>
+                <div class="answer1-card" onclick="nextQuestion();"></div>
+                <div class="answer1-card" onclick="nextQuestion();"></div>
+            </div>
+            <div class=" info-btn d-flex justify-content-end flex-wrap">
+                
+                <button  id="btn-nex-question" class="btn-next" >Next</button>
             </div>
         </div>
     </div>
+    <script src="/assets/js/scripts.js"></script>
   </body>
 </html>

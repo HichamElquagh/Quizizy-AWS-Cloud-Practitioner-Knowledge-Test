@@ -1,3 +1,19 @@
+.question {
+  display: none;
+}
+
+.start.container {
+  display: none;
+}
+
+.parent-information-active {
+  display: block;
+}
+
+#btn-nex-question {
+  display: none;
+}
+
 .stepper-component {
   margin: 1rem;
   position: relative;
@@ -7,12 +23,11 @@
   counter-reset: incrime;
 }
 .stepper-component .component-step {
-  width: 8rem;
-  height: 5rem;
-  background-color: #EC7211;
+  width: 5rem;
+  height: 4rem;
+  background-color: #5393cf;
   z-index: 1;
   border-radius: 50%;
-  text-indent: 5px;
 }
 .stepper-component .component-step::after {
   content: attr(data-title);
@@ -26,47 +41,61 @@
   content: counter(incrime);
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   font-size: 30px;
   color: #ffffff;
 }
-.stepper-component::before {
-  content: "";
+.stepper-component .progress {
   position: absolute;
   top: 50%;
   background-color: #ffffff;
   height: 4px;
-  width: 80%;
+  width: 60%;
+}
+.stepper-component .component-step-active {
+  background-color: rgb(109, 224, 109);
 }
 
-.component-step-active {
-  background-color: #ffffff;
-  color: #EC7211;
+#parent-information {
+  margin: 4rem 0;
 }
-
-parent-information .information {
+#parent-information .information {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 50vh;
   background-color: #06366B;
   color: rgb(255, 255, 255);
   border-radius: 2rem;
 }
-
-.info-btn {
+#parent-information .info-btn {
   margin-top: 1rem;
 }
-.info-btn .btn-next, .info-btn .btn-previous {
+#parent-information .info-btn .btn-next {
   padding: 1rem;
   width: 10%;
   border-radius: 1rem;
-  background-color: #EC7211;
+  background-color: rgb(109, 224, 109);
   color: #ffffff;
-  font-size: 26px;
+  font-size: 1.5rem;
 }
-.info-btn .btn-next:hover, .info-btn .btn-previous:hover {
+#parent-information .info-btn .btn-next:hover {
   transform: scale(1.04);
 }
+
+#btn-nex-question {
+  padding: 1rem;
+  width: 10%;
+  border-radius: 1rem;
+  background-color: rgb(109, 224, 109);
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+#btn-nex-question:hover {
+  transform: scale(1.04);
+}
+
 body {
   background-image: url("../img/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner.jpg");
   background-repeat: no-repeat;
@@ -75,13 +104,51 @@ body {
   background-attachment: fixed;
 }
 
+.container-bar {
+  background-color: #5393cf;
+  border-radius: 1rem;
+}
+.container-bar .progress-bar {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #1b1a1a;
+  width: 10%;
+  height: 3.9vh;
+  border-radius: 1rem;
+}
+
+.start.container {
+  display: flex;
+  justify-content: center;
+}
+.start.container .start-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5393cf;
+  color: #ffffff;
+  width: 25vw;
+  height: 15vh;
+  border-radius: 2rem;
+}
+.start.container .start-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.question {
+  margin-top: 4rem;
+}
+
 .question-card {
-  margin: 5rem 0;
+  margin: 1rem 0;
   display: flex;
   justify-content: center;
   width: 100%;
   padding: 0.8rem;
-  background-color: #b6d0ea;
+  background-color: #5393cf;
   border-radius: 2rem;
 }
 .question-card h1 {
@@ -89,19 +156,24 @@ body {
 }
 
 #card {
-  margin: 4rem 0;
+  margin: 1rem 0;
   width: 100%;
 }
 #card .answer1-card {
   background-color: #5393cf;
   border-radius: 2rem;
-  border: 3px solid #EC7211;
+  border: 3px solid #ffffff;
   width: 19rem;
   height: 15rem;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0.5rem 0;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  color: #1b1a1a;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 #card .answer1-card:hover {
   transform: scale(1.05);
@@ -109,15 +181,4 @@ body {
 }
 #card .answer1-card:active {
   border: 0.7rem solid #203ae2;
-}
-
-@media only screen and (max-width: 767px) {
-  #card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .answer1-card {
-    margin: 0.5rem 0;
-  }
 }/*# sourceMappingURL=style.css.map */
