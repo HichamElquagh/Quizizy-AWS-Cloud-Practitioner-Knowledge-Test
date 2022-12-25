@@ -2,7 +2,6 @@
 
 let questions = [
   {
-    num: 1,
     Question:
       "Why is AWS more economical than traditional data centers for applications with varying computeworkloads ?",
     Ansewer1: "Amazon EC2 costs are billed on a monthly basis.",
@@ -102,7 +101,7 @@ let questions = [
     Ansewer2: "AWS Identity and Access Management (IAM)",
     Ansewer3: "AWS Billing Console",
     Ansewer4: "AWS Acceptable Use Policy",
-    Trueanswers: "Amazon Simple Notification Service (Amazon SNS)",
+    Trueanswers: "AWS Acceptable Use Policy",
   },
 ];
 const progress = document.getElementById("progress");
@@ -146,25 +145,25 @@ const showQuestion = document.querySelector(".question-card");
 const showAnsewer = document.getElementById("card");
 var index = -1;
 
-function startQuiz(){
+function startQuiz() {
   displayQst.style.display = "block";
   start.style.display = "none";
   nextQuestion();
 }
 function displayquestion(q) {
-  
-  let tag = "<h1>" + questions[q].Question + "</h1>";
+
+  let tag = "<h3>" + questions[q].Question + "</h3>";
   let optionTag =
-    '<div  onclick="nextQuestion();"  class="answer1-card">' +
+    '<div  onclick="nextQuestion(); value="questions[q].Ansewer1 "  class="answer1-card">' +
     questions[q].Ansewer1 +
     "</div>" +
-    '<div  onclick="nextQuestion();" class="answer1-card">' +
+    '<div  onclick="nextQuestion();" value="questions[q].Ansewer2"  class="answer1-card">' +
     questions[q].Ansewer2 +
     "</div>" +
-    '<div onclick="nextQuestion();"  class="answer1-card">' +
+    '<div onclick="nextQuestion();"  value="questions[q].Ansewer3 " class="answer1-card">' +
     questions[q].Ansewer3 +
     "</div>" +
-    '<div onclick="nextQuestion();"  class="answer1-card">' +
+    '<div onclick="nextQuestion();" value="questions[q].Ansewer4 " class="answer1-card">' +
     questions[q].Ansewer4 +
     "</div>";
   showQuestion.innerHTML = tag;
@@ -172,21 +171,31 @@ function displayquestion(q) {
 }
 
 
- function progresss(){
+function progresss() {
+
+
+  // array.forEach(element => {
+
+  // });
   let width = `${(index + 1) * percentage}%`;
   progressBar.style.width = width;
   progressBar.style.color = width;
   progressBar.innerText = width;
 
- }
-
-function nextQuestion(){
-index++;
-if(index < questions.length){
-  displayquestion(index);
-  progresss();
 }
-// console.log(questions[].Question);
+
+function nextQuestion() {
+  index++;
+  // if (index < questions.length) {
+  //   displayquestion(index);
+  //   progresss();
+  // }
+  console.log(index);
+  // console.log(showAnsewer.value);
+  document.querySelectorAll("answer1-card").forEach(inn => {
+    inn.length;
+  });
+
 }
 
 // // progressBar

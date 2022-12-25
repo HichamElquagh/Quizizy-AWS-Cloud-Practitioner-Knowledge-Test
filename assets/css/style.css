@@ -25,7 +25,7 @@
 .stepper-component .component-step {
   width: 5rem;
   height: 4rem;
-  background-color: #5393cf;
+  background-color: #D5CEA3;
   z-index: 1;
   border-radius: 50%;
 }
@@ -48,12 +48,12 @@
 .stepper-component .progress {
   position: absolute;
   top: 50%;
-  background-color: #ffffff;
+  background-color: #D5CEA3;
   height: 4px;
   width: 60%;
 }
 .stepper-component .component-step-active {
-  background-color: rgb(109, 224, 109);
+  background-color: rgb(185, 186, 192);
 }
 
 #parent-information {
@@ -63,20 +63,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   width: 100%;
-  height: 50vh;
-  background-color: #06366B;
+  height: 36vh;
   color: rgb(255, 255, 255);
   border-radius: 2rem;
 }
-#parent-information .info-btn {
-  margin-top: 1rem;
-}
 #parent-information .info-btn .btn-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 1rem;
-  width: 10%;
-  border-radius: 1rem;
-  background-color: rgb(109, 224, 109);
+  width: 8rem;
+  height: 3rem;
+  border-radius: 0.7rem;
+  background-color: #3C2A21;
   color: #ffffff;
   font-size: 1.5rem;
 }
@@ -97,15 +98,11 @@
 }
 
 body {
-  background-image: url("../img/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner.jpg");
-  background-repeat: no-repeat;
-  background-position: fixed;
-  background-size: cover;
-  background-attachment: fixed;
+  background-color: #1A120B;
 }
 
 .container-bar {
-  background-color: #5393cf;
+  background-color: #D5CEA3;
   border-radius: 1rem;
 }
 .container-bar .progress-bar {
@@ -113,21 +110,19 @@ body {
   display: flex;
   justify-content: center;
   align-content: center;
-  background-color: #1b1a1a;
+  background-color: #3C2A21;
   width: 10%;
   height: 3.9vh;
   border-radius: 1rem;
 }
 
-.start.container {
-  display: flex;
-  justify-content: center;
-}
 .start.container .start-card {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #5393cf;
+  margin: 0 auto;
+  margin-top: 9rem;
+  background-color: #D5CEA3;
   color: #ffffff;
   width: 25vw;
   height: 15vh;
@@ -146,10 +141,11 @@ body {
   margin: 1rem 0;
   display: flex;
   justify-content: center;
+  text-align: center;
   width: 100%;
   padding: 0.8rem;
-  background-color: #5393cf;
   border-radius: 2rem;
+  color: #D5CEA3;
 }
 .question-card h1 {
   text-align: center;
@@ -160,10 +156,10 @@ body {
   width: 100%;
 }
 #card .answer1-card {
-  background-color: #5393cf;
-  border-radius: 2rem;
-  border: 3px solid #ffffff;
-  width: 19rem;
+  background-color: #1A120B;
+  border-radius: 1rem;
+  border: 2px solid #E5E5CB;
+  width: 15rem;
   height: 15rem;
   display: flex;
   justify-content: center;
@@ -172,7 +168,7 @@ body {
   font-size: 1.7rem;
   font-weight: bold;
   text-align: center;
-  color: #1b1a1a;
+  color: #d6cbcb;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 #card .answer1-card:hover {
