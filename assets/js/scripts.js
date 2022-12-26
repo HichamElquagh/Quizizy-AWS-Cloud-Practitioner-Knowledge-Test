@@ -10,7 +10,7 @@ let questions = [
     Ansewer3: "Amazon EC2 instances can be launched on demand when needed..",
     Ansewer4:
       "Users can permanently run enough instances to handle peak workloads",
-    Trueanswers: "Amazon EC2 instances can be launched on demand when needed",
+    Trueanswers: 3,
   },
 
   {
@@ -20,7 +20,7 @@ let questions = [
     Ansewer2: "AWS Database Migration Service (AWS DMS)",
     Ansewer3: "Amazon EC2",
     Ansewer4: "Amazon AppStream 2.0",
-    Trueanswers: "AWS Database Migration Service (AWS DMS)",
+    Trueanswers: 2,
   },
   {
     Question:
@@ -30,7 +30,7 @@ let questions = [
     Ansewer2: "AWS OpsWorks",
     Ansewer3: "AWS SDK",
     Ansewer4: "AWS Marketplace",
-    Trueanswers: "AWS Marketplace",
+    Trueanswers: 4,
   },
   {
     Question:
@@ -40,7 +40,7 @@ let questions = [
     Ansewer2: "Amazon Route 53",
     Ansewer3: "AWS Direct Connect",
     Ansewer4: "Amazon Virtual Private Cloud (Amazon VPC)",
-    Trueanswers: "Amazon Virtual Private Cloud (Amazon VPC)",
+    Trueanswers: 4,
   },
 
   {
@@ -50,7 +50,7 @@ let questions = [
     Ansewer2: "Maintaining physical hardware",
     Ansewer3: "Securing application access and data",
     Ansewer4: "Managing guest operating systems",
-    Trueanswers: "Maintaining physical hardware",
+    Trueanswers: 2,
   },
   {
     id: "6",
@@ -61,7 +61,7 @@ let questions = [
     Ansewer2: "Edge locations",
     Ansewer3: "Availability Zones",
     Ansewer4: "Virtual Private Cloud (VPC)",
-    Trueanswers: "Edge locations",
+    Trueanswers: 2,
   },
   {
     Question:
@@ -71,7 +71,7 @@ let questions = [
     Ansewer2: "Audit AWS Identity and Access Management (IAM) roles",
     Ansewer3: "Enable multi-factor authentication",
     Ansewer4: "Enable AWS CloudTrail",
-    Trueanswers: "Enable multi-factor authentication",
+    Trueanswers: 3,
   },
   {
     Question:
@@ -80,7 +80,7 @@ let questions = [
     Ansewer2: "AWS CloudTrail",
     Ansewer3: "AWS X-Ray",
     Ansewer4: "AWS Identity and Access Management (AWS IAM)",
-    Trueanswers: "AWS CloudTrail",
+    Trueanswers: 2,
   },
   {
     Question:
@@ -90,7 +90,7 @@ let questions = [
     Ansewer2: "AWS CloudTrail",
     Ansewer3: "AWS Trusted Advisor",
     Ansewer4: "Amazon Route 53",
-    Trueanswers: "Amazon Simple Notification Service (Amazon SNS)",
+    Trueanswers: 1,
   },
 
   {
@@ -101,7 +101,7 @@ let questions = [
     Ansewer2: "AWS Identity and Access Management (IAM)",
     Ansewer3: "AWS Billing Console",
     Ansewer4: "AWS Acceptable Use Policy",
-    Trueanswers: "AWS Acceptable Use Policy",
+    Trueanswers: 4,
   },
 ];
 const progress = document.getElementById("progress");
@@ -134,74 +134,113 @@ btnNextQuestion.addEventListener("click", () => {
 function update(coo) {
   component[coo].classList.add("component-step-active");
   component[coo - 1].classList.remove("component-step-active");
-  // displayQst.style.display = "block";
   start.style.display = "block";
   infoo.style.display = "none";
-  // displayquestion ();
 }
 
 // this function for dispaly the question
 const showQuestion = document.querySelector(".question-card");
 const showAnsewer = document.getElementById("card");
-var index = -1;
+const ansewercard = document.querySelectorAll(".answer1-card");
+const showresultatt = document.querySelector(".container-resultat");
+var index = randomindex(questions);
+var progressindex = 0;
+function randomindex(arr) {
+  let indice = Math.floor(Math.random() * (arr.length - 1));
+  return indice;
+}
 
 function startQuiz() {
   displayQst.style.display = "block";
   start.style.display = "none";
-  nextQuestion();
+  // console.log(index);
+  displayquestion(index);
+  progresss(progressindex);
 }
 function displayquestion(q) {
-
   let tag = "<h3>" + questions[q].Question + "</h3>";
   let optionTag =
-    '<div  onclick="nextQuestion(); value="questions[q].Ansewer1 "  class="answer1-card">' +
+    '<div  onclick="nextQuestion(1);"  class="answer1-card" id="1">' +
     questions[q].Ansewer1 +
     "</div>" +
-    '<div  onclick="nextQuestion();" value="questions[q].Ansewer2"  class="answer1-card">' +
+    '<div  onclick="nextQuestion(2);" class="answer1-card" id="2">' +
     questions[q].Ansewer2 +
     "</div>" +
-    '<div onclick="nextQuestion();"  value="questions[q].Ansewer3 " class="answer1-card">' +
+    '<div onclick="nextQuestion(3);"   class="answer1-card" id="3">' +
     questions[q].Ansewer3 +
     "</div>" +
-    '<div onclick="nextQuestion();" value="questions[q].Ansewer4 " class="answer1-card">' +
+    '<div onclick="nextQuestion(4);" class="answer1-card" id="4">' +
     questions[q].Ansewer4 +
     "</div>";
   showQuestion.innerHTML = tag;
   showAnsewer.innerHTML = optionTag;
 }
 
+function progresss(q) {
+  if (q <= questions.length + q) {
+    let width = `${(q + 1) * percentage}%`;
+    progressBar.style.width = width;
+    progressBar.style.color = "#D5CEA3";
+    progressBar.innerText = width;
+  }
+}
 
-function progresss() {
-
-
-  // array.forEach(element => {
-
+function nextQuestion(d) {
+  let answer = null ;
+  
+  // ansewercard.forEach(anscard =>{
+    // anscard.addEventListener('click', function clicked(){}
+    // if (anscard ==   ){
+    //   answer = anscard.id ;
+    // }
   // });
-  let width = `${(index + 1) * percentage}%`;
-  progressBar.style.width = width;
-  progressBar.style.color = width;
-  progressBar.innerText = width;
-
-}
-
-function nextQuestion() {
-  index++;
-  // if (index < questions.length) {
-  //   displayquestion(index);
-  //   progresss();
+  // console.log(answer);
+  // if (answer == questions[index].Trueanswers){
+  //   console.log('success');
+  //   document.getElementById(answer).style.background = "green" ;
+  //   console.log(document.getElementById(answer));
   // }
-  console.log(index);
-  // console.log(showAnsewer.value);
-  document.querySelectorAll("answer1-card").forEach(inn => {
-    inn.length;
-  });
 
+  // else if (answer != questions[index].Trueanswers){
+  //   console.log('wrong');
+  //   document.getElementById(answer).style.background = "red" ;
+  //   document.getElementById(answer).style.background = "red" ;
+  //   document.getElementById(answer).style.background = "red" ;
+  // }
+  if (questions.length == 0) {
+    btnNextQuestion.style.display = "block";
+    return;
+  }
+  // }
+
+
+  
+
+  if (d == questions[index].Trueanswers) {
+    console.log("true");
+    ansewercard.classList.add("active"); 
+    
+  } else {
+    console.log("false");
+  }
+
+
+  questions.splice(index, 1);
+  index = randomindex(questions);
+  displayquestion(index);
+  // progress
+
+  progressindex++;
+  progresss(progressindex);
 }
 
-// // progressBar
-// const cardBar = document.querySelectorAll(".answer1-card");
-// cardBar.forEach(card=> {
-//   card.addEventListener("click", () => {
-//     console.log('hhhh');
-//   });
-// });
+function showresultat(){
+  displayQst.style.display= "none";
+  start.style.display= "none";
+  showresultatt.style.display= "block";
+
+
+};
+
+
+function correctionansewer() {}

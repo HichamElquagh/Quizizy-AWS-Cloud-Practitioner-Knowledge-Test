@@ -14,6 +14,10 @@
   display: none;
 }
 
+.container-resultat {
+  display: none;
+}
+
 .stepper-component {
   margin: 1rem;
   position: relative;
@@ -25,7 +29,7 @@
 .stepper-component .component-step {
   width: 5rem;
   height: 4rem;
-  background-color: #D5CEA3;
+  background-color: #d5cea3;
   z-index: 1;
   border-radius: 50%;
 }
@@ -48,12 +52,12 @@
 .stepper-component .progress {
   position: absolute;
   top: 50%;
-  background-color: #D5CEA3;
+  background-color: #d5cea3;
   height: 4px;
   width: 60%;
 }
 .stepper-component .component-step-active {
-  background-color: rgb(185, 186, 192);
+  background-color: #3c2a21;
 }
 
 #parent-information {
@@ -77,7 +81,7 @@
   width: 8rem;
   height: 3rem;
   border-radius: 0.7rem;
-  background-color: #3C2A21;
+  background-color: #d5cea3;
   color: #ffffff;
   font-size: 1.5rem;
 }
@@ -89,7 +93,7 @@
   padding: 1rem;
   width: 10%;
   border-radius: 1rem;
-  background-color: rgb(109, 224, 109);
+  background-color: #d5cea3;
   color: #ffffff;
   font-size: 1.5rem;
 }
@@ -98,11 +102,11 @@
 }
 
 body {
-  background-color: #1A120B;
+  background-color: #1a120b;
 }
 
 .container-bar {
-  background-color: #D5CEA3;
+  background-color: #d5cea3;
   border-radius: 1rem;
 }
 .container-bar .progress-bar {
@@ -110,7 +114,7 @@ body {
   display: flex;
   justify-content: center;
   align-content: center;
-  background-color: #3C2A21;
+  background-color: #3c2a21;
   width: 10%;
   height: 3.9vh;
   border-radius: 1rem;
@@ -122,7 +126,7 @@ body {
   align-items: center;
   margin: 0 auto;
   margin-top: 9rem;
-  background-color: #D5CEA3;
+  background-color: #d5cea3;
   color: #ffffff;
   width: 25vw;
   height: 15vh;
@@ -145,7 +149,7 @@ body {
   width: 100%;
   padding: 0.8rem;
   border-radius: 2rem;
-  color: #D5CEA3;
+  color: #d5cea3;
 }
 .question-card h1 {
   text-align: center;
@@ -156,10 +160,10 @@ body {
   width: 100%;
 }
 #card .answer1-card {
-  background-color: #1A120B;
+  background-color: #1a120b;
   border-radius: 1rem;
-  border: 2px solid #E5E5CB;
-  width: 15rem;
+  border: 2px solid #e5e5cb;
+  width: 20rem;
   height: 15rem;
   display: flex;
   justify-content: center;
@@ -175,6 +179,17 @@ body {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
-#card .answer1-card:active {
-  border: 0.7rem solid #203ae2;
+
+.active {
+  border: 0.7rem solid red;
+}
+
+.resultat {
+  display: flex;
+  justify-content: center;
+  color: #d5cea3;
+  height: 20rem;
+  font-size: 2.5rem;
+  border-radius: 0.8rem;
+  border: 0.2rem solid #d5cea3;
 }/*# sourceMappingURL=style.css.map */
