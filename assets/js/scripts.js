@@ -153,8 +153,10 @@ btnNext.addEventListener("click", () => {
 // });
 
 function update(coo) {
+  
   component[coo].classList.add("component-step-active");
   component[coo - 1].classList.remove("component-step-active");
+  // progress.style.width = "30%"
   if (coo == 1) {
     start.style.display = "block";
     infoo.style.display = "none";
@@ -169,6 +171,7 @@ const showAnsewer = document.getElementById("card");
 const ansewercard = document.querySelectorAll(".answer1-card");
 const showresultatt = document.querySelector(".container-resultat");
 const result = document.querySelector(".resultat");
+const score =document.querySelector(".score-para");
 var index = 0;
 var progressindex = 0;
 var trueinsewer = 0;
@@ -213,11 +216,11 @@ function progresss() {
 
 let wrong = [];
 let correct = [];
-let answer = null;
+// let answer =0;
 function nextQuestion(d) {
   let selectedAnswer = document.getElementById(d);
   if (d == questions[index].Trueanswers) {
-    // answer = true;
+    
     let corrects = {
       correctAnsewer: questions[index].Trueanswers,
       questions: questions[index].Question,
@@ -227,7 +230,6 @@ function nextQuestion(d) {
     selectedAnswer.style.backgroundColor = "#008000b0";
     trueinsewer++;
   } else {
-    // answer = false;
     let wrongs = {
       correctAnsewer: questions[index].Trueanswers,
       questions: questions[index].Question,
@@ -258,6 +260,10 @@ function showresultat() {
 }
 
 function correctionansewer() {
+     score.innerHTML = '<div class="score-para">'
+     +'<p>'+ 'YOUR SCORE : '+ trueinsewer * 10+' %'
+ '</p>' + '</div>'; 
+    
   for (let i = 0; i < wrong.length; i++) {
     result.innerHTML +=
       '<div class="resultat text-light" style="background-color:#ff000087;margin:10px 0" >' +
