@@ -238,6 +238,18 @@ function nextQuestion(d) {
 
     wrong.push(wrongs);
     selectedAnswer.style.backgroundColor = "#ff000087";
+    // for(let i=0;i<ansewercard.length;i++){
+       let qq = questions[index].Trueanswers;
+       let tre = document.getElementById(qq);
+       tre.style.backgroundColor = "#008000b0"; 
+      
+    // }
+
+
+  
+      
+  // });
+    
   }
   // stop count down here
   setTimeout(function(){

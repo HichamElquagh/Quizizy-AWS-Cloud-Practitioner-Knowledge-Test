@@ -267,10 +267,9 @@ body {
   margin: 1rem 0;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-
 
   .answer1-card {
     cursor: pointer;
@@ -288,6 +287,7 @@ body {
     text-align: center;
     color: #d6cbcb;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    // margin-left: .4rem;
 
     &:hover {
       transform: scale(1.05);
@@ -362,9 +362,13 @@ body {
     //  flex: .15;
      
     }
+    }
+    @media screen and (max-width: 766px) {
 
+    #card { 
+    justify-content: center;
    }
-
+}
    
 
     

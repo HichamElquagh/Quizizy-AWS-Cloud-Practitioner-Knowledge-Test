@@ -203,7 +203,7 @@ body {
   margin: 1rem 0;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -274,5 +274,10 @@ body {
   .navBar {
     display: block;
     margin-left: 3rem;
+  }
+}
+@media screen and (max-width: 766px) {
+  #card {
+    justify-content: center;
   }
 }/*# sourceMappingURL=style.css.map */
