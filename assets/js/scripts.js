@@ -144,13 +144,7 @@ btnNext.addEventListener("click", () => {
   }
 });
 
-// btnNextQuestion.addEventListener("click", () => {
-//   let coo = 1;
-//   coo++;
-//   if (coo < component.length) {
-//     update(coo);
-//   }
-// });
+
 
 function update(coo) {
   
