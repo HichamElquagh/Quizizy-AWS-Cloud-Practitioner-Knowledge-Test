@@ -276,7 +276,7 @@ body {
     background-color: #1a120b;
     border-radius: 1rem;
     border: 2px solid #e5e5cb;
-    width: 20rem;
+    width: 17rem;
     height: 15rem;
     display: flex;
     justify-content: center;
@@ -353,6 +353,9 @@ body {
     }
 
    }
+    .correct {
+      background-color: #008000b0;
+    }
    @media screen and (max-width: 480px) {
       
     .navBar {

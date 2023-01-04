@@ -11,7 +11,7 @@ class Question
     public function getquestion()
     {
         $database = new Database();
-        $sql = "SELECT id,questions FROM question";
+        $sql ="SELECT question.id,question.questions ,question.answer1 ,question.answer2,question.answer3,question.answer4,answer.correct_id, answer.correct_answer,answer.justifications FROM question INNER JOIN answer ON question.id=answer.id";
         $stmt = $database->connect()->prepare($sql);
         $stmt->execute();
         $dbQuestion = $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -19,12 +19,7 @@ class Question
     }
 }
 
-// $db = new Question();
-// $dbs = $db->getquestion();
-// echo json_encode($dbs)
-// echo '<pre>';
-// var_dump($dbs);
-// echo '<pre>';
+
 
 
 
