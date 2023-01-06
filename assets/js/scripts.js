@@ -1,4 +1,24 @@
 var questions = [];
+var wrong = [];
+var correct = [];
+
+
+
+function ajax_json_data() {
+  let getdata = new XMLHttpRequest();
+
+  getdata.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      questions = JSON.parse(this.responseText);
+      progresss();
+    }
+  };
+  getdata.open(
+    "GET",
+    "http://localhost/Quizizy-AWS-Cloud-Practitioner-Knowledge-Test/scripts.php/crud.script.php"
+  );
+  getdata.send();
+}
 ajax_json_data();
 const progress = document.getElementById("progress");
 const btnNext = document.getElementById("btn-nex");
@@ -40,12 +60,43 @@ const ansewercard = document.querySelectorAll(".answer1-card");
 const showresultatt = document.querySelector(".container-resultat");
 const result = document.querySelector(".resultat");
 const score = document.querySelector(".score-para");
+const timer = document.querySelector(".timeer");
 var index = 0;
 var progressindex = 0;
 var trueinsewer = 0;
 questions.sort(function () {
   return Math.random() - 0.5;
 });
+
+// let  maxCount = 10;
+// let settime;
+// changeTimer();
+// function changeTimer(){
+
+
+//     settime= setInterval(()=>{ 
+//       maxCount--;
+//       timer.innerHTML = '00:'+ maxCount;
+//       if(maxCount<=1){
+//         maxCount=10;
+//         console.log(index);
+//         if(index<questions.length){
+//           console.log(questions.length)
+//                   index++;
+//                   displayquestion(index);
+                  
+//                   // console.log(index);
+//                 }
+//                   else  showresultat();
+//       }
+        
+
+
+//     },300)
+
+// } 
+
+
 
 function startQuiz() {
   displayQst.style.display = "block";
@@ -55,6 +106,7 @@ function startQuiz() {
   progresss();
 }
 function displayquestion(q) {
+    
   // console.log(index);
   let tag = "<h3>" + questions[index].questions + "</h3>";
   let optionTag =
@@ -73,6 +125,7 @@ function displayquestion(q) {
   showQuestion.innerHTML = tag;
   showAnsewer.innerHTML = optionTag;
   progresss();
+  
   // console.log(q);
 }
 
@@ -84,8 +137,7 @@ function progresss() {
   progressBar.innerText = width;
 }
 
-let wrong = [];
-let correct = [];
+
 // let answer =0;
 function nextQuestion(d) {
   console.log(d);
@@ -105,27 +157,30 @@ function nextQuestion(d) {
       questions: questions[index].questions,
       explications: questions[index].justifications,
     };
-
     wrong.push(wrongs);
     selectedAnswer.style.backgroundColor = "#ff000087";
-    // for(let i=0;i<ansewercard.length;i++){
     let qq = questions[index].correct_id;
     let tre = document.getElementById(qq);
-    //  console.log(tre);
     tre.style.backgroundColor = "#008000b0";
-    // tre.classList.toggle('correct');
   }
+
+    
   // stop count down here
   setTimeout(function () {
+    
     index++;
     if (index == questions.length) {
       showresultat();
-    } else displayquestion();
+    } else {
+      // ansewercard.classList.remove("disabled");
+      displayquestion();}
     // restart count down here
-  }, 2000);
+  }, 900);
+  // maxCount = 10;
 }
 
 function showresultat() {
+  // clearInterval(settime);
   component[coo].classList.add("component-step-active");
   component[coo - 1].classList.remove("component-step-active");
   displayQst.style.display = "none";
@@ -133,14 +188,15 @@ function showresultat() {
   showresultatt.style.display = "block";
   correctionansewer();
 
-  $.post(
+  $.post (
     "scripts.php/crud.script.php",
     {
       score: trueinsewer * 10,
     },
-    function (data, status) {},
+    function () {},
     "json"
   );
+  
 }
 
 function correctionansewer() {
@@ -164,13 +220,7 @@ function correctionansewer() {
       wrong[i].explications +
       "</p>" +
       "</div>";
-    // '<div class="resultat text-light" >' +
-    // wrong[i].correctAnsewer +
-    // "</div>" +
-    // '<div class="resultat text-light" >' +
-    // wrong[i].explications +
-    // "</div>";
-    console.log("1");
+   
   }
 
   for (let i = 0; i < correct.length; i++) {
@@ -189,18 +239,4 @@ function correctionansewer() {
   }
 }
 
-function ajax_json_data() {
-  let getdata = new XMLHttpRequest();
 
-  getdata.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      questions = JSON.parse(this.responseText);
-      progresss();
-    }
-  };
-  getdata.open(
-    "POST",
-    "http://localhost/Quizizy-AWS-Cloud-Practitioner-Knowledge-Test/scripts.php/crud.script.php"
-  );
-  getdata.send();
-}

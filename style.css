@@ -147,6 +147,14 @@ body {
           user-select: none;
 }
 
+.timeer {
+  color: bisque;
+  font-family: cursive;
+  display: flex;
+  justify-content: end;
+  height: 1vh;
+}
+
 .container-bar {
   background-color: #d5cea3;
   border-radius: 1rem;
@@ -212,7 +220,7 @@ body {
   background-color: #1a120b;
   border-radius: 1rem;
   border: 2px solid #e5e5cb;
-  width: 17rem;
+  width: 19.7rem;
   height: 15rem;
   display: flex;
   justify-content: center;
@@ -231,6 +239,10 @@ body {
 
 .active {
   border: 0.7rem solid red;
+}
+
+.disabled {
+  pointer-events: none;
 }
 
 .container-resultat {
@@ -268,6 +280,10 @@ body {
 .btn-restart:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.correct {
+  background-color: rgba(0, 128, 0, 0.6901960784);
 }
 
 @media screen and (max-width: 480px) {

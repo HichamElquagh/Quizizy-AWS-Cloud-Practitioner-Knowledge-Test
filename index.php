@@ -56,12 +56,10 @@
       <div class="information">
         <h3 class="title-info">information</h3>
         <p class="info-paragraph">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-          laborum, doloremque at aliquid itaque facilis ipsum dolor quia,
-          placeat minima fuga molestiae repudiandae non veniam odit! In
-          aperiam necessitatibus veritatis Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex, earum
-          magni fuga voluptate id deserunt cupiditate odio dolore nemo vitae optio eum tenetur. Quidem nemo quibusdam
-          esse qui doloremque?
+                informations after the quiz start.
+                you can't pass to the next question until you answer.
+                 you can't see your result until the end of the quiz.
+                 you most to answer right for '5' questions to win.
         </p>
         <div class="info-btn d-flex justify-content-end flex-wrap">
           <button id="btn-nex" class="btn-next">Next</button>
@@ -79,12 +77,14 @@
   <!-- <div class="container">
         
     </div> -->
-
-  <div class="question container" id="question-container">
-    <div class="container-bar">
-      <div class="progress-bar" data-stagees="10"></div>
-    </div>
+    
+    <div class="question container" id="question-container">
+      <div class="timeer">00:00</div> 
+      <div class="container-bar">
+        <div class="progress-bar" data-stagees="10"></div>
+      </div>
     <div class="d-flex flex-column align-content-between">
+    
       <div class="question-card">
         <h1>Lorem ipsum, dolor sit amet consectetur adipi</h1>
       </div>
